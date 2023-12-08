@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="SalesService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="SalesOrders" EntityType="SalesService.SalesOrders"/>
+            </EntityContainer>
+            <EntityType Name="SalesOrders">
+                <Key>
+                    <PropertyRef Name="SONumber"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="SONumber" Type="Edm.String" Nullable="false"/>
+                <Property Name="orderDate" Type="Edm.Date"/>
+                <Property Name="customerName" Type="Edm.String"/>
+                <Property Name="customerNumber" Type="Edm.String"/>
+                <Property Name="PoNumber" Type="Edm.String"/>
+                <Property Name="inquiryNumber" Type="Edm.String"/>
+                <Property Name="totalOrderItems" Type="Edm.Int32"/>
+            </EntityType>
+            <Annotations Target="SalesService.SalesOrders/createdAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+                </Annotations>
+                <Annotations Target="SalesService.SalesOrders/createdBy">
+                    <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                    <Annotation Term="Core.Immutable" Bool="true"/>
+                    <Annotation Term="Core.Computed" Bool="true"/>
+                    <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+                        </Annotations>
+                        <Annotations Target="SalesService.SalesOrders/modifiedAt">
+                            <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                            <Annotation Term="Core.Computed" Bool="true"/>
+                            <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+                            </Annotations>
+                            <Annotations Target="SalesService.SalesOrders/modifiedBy">
+                                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                <Annotation Term="Core.Computed" Bool="true"/>
+                                <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                    <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/SONumber">
+                                        <Annotation Term="Common.Label" String="Sales Order Number"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/orderDate">
+                                        <Annotation Term="Common.Label" String="Order Date"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/customerName">
+                                        <Annotation Term="Common.Label" String="Customer Name"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/customerNumber">
+                                        <Annotation Term="Common.Label" String="Customer Number"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/PoNumber">
+                                        <Annotation Term="Common.Label" String="PO Number"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/inquiryNumber">
+                                        <Annotation Term="Common.Label" String="Inquiry Number"/>
+                                    </Annotations>
+                                    <Annotations Target="SalesService.SalesOrders/totalOrderItems">
+                                        <Annotation Term="Common.Label" String="Total orders"/>
+                                    </Annotations>
+                                </Schema>
+                            </edmx:DataServices>
+                        </edmx:Edmx>

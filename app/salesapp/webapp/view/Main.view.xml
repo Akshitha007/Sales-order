@@ -1,0 +1,84 @@
+<mvc:View
+    controllerName="com.ibm.salesapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <f:DynamicPage
+        id="dynamicPageId"
+        headerExpanded="{/headerExpanded}"
+        toggleHeaderOnTitleClick="{/titleClickable}"
+    >
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Sales Order" />
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="Details" />
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Label text="Details" />
+                </f:snappedContent>
+                <f:snappedTitleOnMobile>
+                    <Title text="Details" />
+                </f:snappedTitleOnMobile>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <Table items="{/SalesOrders}">
+                <columns>
+                    <Column>
+                        <Label text='Sales Order Number' />
+                    </Column>
+                    <Column>
+                        <Label text='Order Date' />
+                    </Column>
+                    <Column>
+                        <Label text='Customer Name' />
+                    </Column>
+                    <Column>
+                        <Label text='Customer Number' />
+                    </Column>
+                    <Column>
+                        <Label text='PO Number' />
+                    </Column>
+                    <Column>
+                        <Label text='Inquiry Number' />
+                    </Column>
+                    <Column>
+                        <Label text='Total orders' />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{SONumber}" />
+                        </cells>
+                        <cells>
+                            <Text text="{orderDate}" />
+                        </cells>
+                        <cells>
+                            <Text text="{customerName}" />
+                        </cells>
+                        <cells>
+                            <Text text="{customerNumber}" />
+                        </cells>
+                        <cells>
+                            <Text text="{PoNumber}" />
+                        </cells>
+                        <cells>
+                            <Text text="{inquiryNumber}" />
+                        </cells>
+                        <cells>
+                            <Text text="{totalOrderItems}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+        <f:footer />
+    </f:DynamicPage>
+</mvc:View>
