@@ -5,7 +5,7 @@ using {
     cuid
 } from '@sap/cds/common';
 
-entity Salesorders : managed {
+entity SalesOrders : managed {
 
         @title: 'Sales Order Number'
         key SONumber        : String;
