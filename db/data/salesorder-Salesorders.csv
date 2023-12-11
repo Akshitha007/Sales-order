@@ -1,4 +1,4 @@
-customerName,PoNumber,customerNumber,orderDate,SONumber,inquiryNumber,totalOrderItems
+customerName,PoNumber,customerNumber,orderDate,soNumber,inquiryNumber,totalOrderItems
 Adidas,2000000001,3000000001,2021-06-15T19:34:03Z,500009101,30061111,2
 Adidas,2000000002,3000000002,2021-06-15T19:34:03Z,500009102,30061111,3
 Rebok,2000000003,3000000003,2021-06-15T19:34:03Z,500009103,30061114,2
